@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3f2fd"
+    tools:context=".MainActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--    container search    -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:hint="Enter city your name"
+                    android:inputType="text"
+                    android:maxLines="1">
+
+                </EditText>
+
+            </RelativeLayout>
+            <!--  END container search    -->
+
+            <!--    container weather main detail  -->
+            <LinearLayout
+                android:id="@+id/containerWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switchFC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="°C"
+                    android:textSize="25sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/icLocation"
+                        android:layout_width="23sp"
+                        android:layout_height="23sp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_baseline_location_on_24"></ImageView>
+
+                    <TextView
+                        android:id="@+id/txtCityName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/icLocation"
+                        android:text="City Name"
+                        android:textSize="25sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/txtDateCurrent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textSize="13sp">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/icClouds"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:layout_below="@+id/txtDateCurrent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp">
+
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/txtDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/icClouds"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textSize="18sp">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp">
+
+                    <TextView
+                        android:id="@+id/txtTemperatureLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtTemperature"
+                        android:text="Temperature"
+                        android:textSize="19sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/txtTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtTemperatureUnit"
+                        android:text="-"
+                        android:textSize="19sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                    <TextView
+                        android:id="@+id/txtTemperatureUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="°"
+                        android:textSize="19sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtMoistureLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/txtMoisture"
+                        android:text="Humidity"
+                        android:textSize="19sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/txtMoisture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="-"
+                        android:textSize="19sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--   END container weather main detail -->
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
